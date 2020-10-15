@@ -1,7 +1,9 @@
+html,
 body {
   margin: 0;
+  height: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: linear;
+  background: linear-gradient(180deg, #222 65%, #ffff 0%);
 }
 
 .container-header {
@@ -10,7 +12,7 @@ body {
 }
 
 header {
-  background: linear-gradient(110deg, #fdcd3b 30%, #ffed4b 30%);
+  background: linear-gradient(110deg, #fdcd3b 30%, #ffed4b 0%);
 }
 
 header::after {
@@ -36,7 +38,7 @@ nav ul {
 
 nav ul li {
   font-size: 18px;
-  margin: 55px 0px 5px 40px;
+  margin: 35px 0px 5px 40px;
   line-height: 40px;
   display: inline-block;
   /*  */
@@ -56,4 +58,10 @@ nav a {
   color: #222;
   padding: 15px 20px;
   text-decoration: none;
+}
+
+nav a:hover {
+  color: whitesmoke;
+  background-color: #1e2329;
+  transition: all ease-in 250ms;
 }

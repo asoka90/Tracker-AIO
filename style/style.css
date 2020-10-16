@@ -4,7 +4,6 @@ body {
   width: 100%;
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
-
   background: linear-gradient(180deg, #222 541px, #ffff 0%);
 }
 
@@ -82,12 +81,18 @@ nav a:hover {
   margin: 10px;
   padding: 5px;
   display: table-cell;
+  border-radius: 3%;
   /* vertical-align: middle; */
   background-color: #ffff;
   max-width: 395px;
   /* height: 300px; */
   max-height: 420px;
   box-shadow: 5px 10px 8px #888888;
+  transition: box-shadow 0.25s;
+}
+
+.box:hover {
+  box-shadow: 5px 10px 8px #222;
 }
 
 .box h1 {
@@ -98,6 +103,7 @@ nav a:hover {
   margin: 0px 14px;
   font-size: 18px;
   font-weight: 500;
+  text-align: justify;
 }
 
 .box img {
@@ -108,13 +114,45 @@ nav a:hover {
   padding: 18px 0px 50px;
 }
 
-.box:hover {
-  color: rebeccapurple;
+.float-icon {
+  width: 20px;
+  height: 20px;
+  padding: 20px;
+  border-radius: 50%;
+  background: #386cb9;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  right: 60px;
+  bottom: 80px;
+  transition: background 0.25s;
+  cursor: pointer;
+}
+
+.float-icon:focus {
+  outline: none;
+}
+
+.float-icon:active {
+  background: #174793;
 }
 
 footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: saddlebrown;
+  padding: 8px 0px;
+  background-color: #fcc100;
+}
+
+footer hr {
+  width: 95%;
+  border-top: 1px solid #1e2329;
+}
+
+footer p {
+  margin: 0 auto;
+  width: 75%;
+  letter-spacing: -1px;
+  opacity: 75%;
+  text-align: center;
 }

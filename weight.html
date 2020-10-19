@@ -34,11 +34,6 @@
     <div class="content">
       <div id="myCalendarWrapper"></div>
     </div>
-    <input
-      type="image"
-      src="assets/baseline_add_black_18dp.png"
-      class="float-icon"
-    />
     <footer>
       <hr />
       <p>
@@ -46,14 +41,44 @@
       </p>
       <hr />
     </footer>
+    <input
+      type="image"
+      src="assets/baseline_add_black_18dp.png"
+      class="float-icon"
+    />
+    <div class="bg-modal">
+      <div class="content-modal">
+        <div class="close">+</div>
+        <p id="dateToday"></p>
+        <form id="diaryForm" action="#">
+          <label for="diary-content">Say something to me:<br /></label>
+          <textarea name="diary-content" id="diary-content"></textarea>
+          <input type="submit" value="Submit" id="submitbtn" />
+        </form>
+      </div>
+    </div>
   </body>
   <script src="./javascript/CalendarPicker.js"></script>
+  <script src="./javascript/tracker.js"></script>
   <script>
+    const lastYear = new Date().getFullYear() - 1;
     const nextYear = new Date().getFullYear() + 1;
     const myCalender = new CalendarPicker("#myCalendarWrapper", {
       // If max < min or min > max then the only available day will be today.
-      min: new Date(),
+      min: new Date(lastYear, 10),
       max: new Date(nextYear, 10), // NOTE: new Date(nextYear, 10) is "Sun Nov 01 <nextYear>"
+    });
+
+    //Get Date Values
+    const currentDateElement = myCalender.value;
+    const currentDayElement = myCalender.value.getDay();
+    const currentToDateString = document.getElementById("dateToday");
+    currentToDateString.textContent =
+      "Date: " + myCalender.value.toDateString();
+    myCalender.onValueChange((currentValue) => {
+      currentToDateString.textContent = currentValue.toDateString();
+      alert(currentToDateString.textContent);
+      console.log(`The current value of the calendar is: ${currentValue}`);
     });
   </script>
 </html>

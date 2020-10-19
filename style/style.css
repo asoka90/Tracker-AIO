@@ -128,12 +128,73 @@ nav a:hover {
   cursor: pointer;
 }
 
-.float-icon:focus {
+.float-icon:focus,
+#submitbtn:focus {
   outline: none;
 }
 
 .float-icon:active {
   background: #174793;
+}
+
+.bg-modal {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 70%);
+  position: absolute;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.content-modal {
+  width: 40%;
+  height: 330px;
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+#submitbtn {
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: teal;
+  border: none;
+  border-radius: 24px;
+  font-size: 18px;
+  color: white;
+  width: 120px;
+  height: 45px;
+  cursor: pointer;
+}
+
+#submitbtn:hover {
+  border: 2px solid teal;
+  color: teal;
+  background-color: white;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 42px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+#diary-content {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  resize: none;
+  width: 100%;
+  height: 190px;
+  margin-top: 5px;
 }
 
 footer {

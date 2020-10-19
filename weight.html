@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="./style/CalendarPicker.style.css" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -30,7 +31,9 @@
         </nav>
       </div>
     </header>
-    <div class="content"></div>
+    <div class="content">
+      <div id="myCalendarWrapper"></div>
+    </div>
     <input
       type="image"
       src="assets/baseline_add_black_18dp.png"
@@ -44,4 +47,13 @@
       <hr />
     </footer>
   </body>
+  <script src="./javascript/CalendarPicker.js"></script>
+  <script>
+    const nextYear = new Date().getFullYear() + 1;
+    const myCalender = new CalendarPicker("#myCalendarWrapper", {
+      // If max < min or min > max then the only available day will be today.
+      min: new Date(),
+      max: new Date(nextYear, 10), // NOTE: new Date(nextYear, 10) is "Sun Nov 01 <nextYear>"
+    });
+  </script>
 </html>
